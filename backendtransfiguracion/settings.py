@@ -84,18 +84,9 @@ WSGI_APPLICATION = 'backendtransfiguracion.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+}
 
-'default': dj_database_url.config(
-
-# Si no hay DATABASE_URL, usa tu SQLite local para desarrollo
-
-default='sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3'),
-
-conn_max_age=600 # Opcional: tiempo de vida de la conexión
-
-)
-
-} 
 
 
 # Password validation
