@@ -27,7 +27,6 @@ class Post(models.Model):
     content = models.TextField()
     createdAt = models.DateTimeField(default=timezone.now)
     imageUrls = models.JSONField(default=list) 
-    
     slug = models.SlugField(max_length=255, unique=True)
     title = models.CharField(max_length=255)
 
