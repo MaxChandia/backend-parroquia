@@ -10,9 +10,6 @@ class PostViewSet(viewsets.ModelViewSet):
 
 @api_view(['POST'])
 def user_login(request):
-    """
-    Login de usuario SEGURO usando la verificación de hash de contraseña de Django.
-    """
     user_name = request.data.get('user')
     password = request.data.get('password')
 
